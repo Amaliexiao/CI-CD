@@ -17,12 +17,13 @@ jobs:
           path: .
   Run-Linter: 
     runs-on: ubuntu-latest
-    needs: Build
+    needs: [Build]
     steps: 
       - name: Downloade code
         uses: actions/download-artifact@v4
         with: 
           name: code
+          path: .
       - name: Lint
         uses: super-linter/super-linter/slim
         env: 
